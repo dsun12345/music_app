@@ -63,8 +63,7 @@ private
     def song_params
         params.require(:song).permit(
             :title,
-            :artist,
-            :genre
+            :artist
         )
     end 
 
