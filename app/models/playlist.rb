@@ -1,4 +1,4 @@
-class Genre < ActiveRecord::Base
+class Playlist < ActiveRecord::Base
 
     validates :title, presence: true
     

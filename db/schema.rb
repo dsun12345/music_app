@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_15_233843) do
+ActiveRecord::Schema.define(version: 2020_07_16_023736) do
 
-  create_table "genres", force: :cascade do |t|
+  create_table "playlists", force: :cascade do |t|
     t.string "title"
   end
 
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_07_15_233843) do
     t.string "title"
     t.string "artist"
     t.boolean "published"
-    t.integer "genre_id"
-    t.index ["genre_id"], name: "index_songs_on_genre_id"
+    t.integer "playlist_id"
+    t.index ["playlist_id"], name: "index_songs_on_playlist_id"
   end
 
 end

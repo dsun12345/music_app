@@ -1,0 +1,5 @@
+The Playlist is <%= @playlist.title %>
+
+<%= button_to "delete", @playlist, method: :delete %>
+
+<%= link_to "add a song", new_playlist_song_path(@playlist) %>
