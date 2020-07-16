@@ -1,0 +1,10 @@
+<%= form_for @playlist do |f| %>
+ 
+    <%= render partial: "/partials/errors", locals: {obj: @playlist} %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %> 
+
+    <%= f.submit "Create Playlist!!" %> 
+
+<% end %> 
