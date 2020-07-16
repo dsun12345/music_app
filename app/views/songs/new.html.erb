@@ -7,7 +7,7 @@
 
     <%= f.label :artist %>
     <%= f.text_field :artist %> 
-
+  
     <%= f.collection_select(:playlist_id, Playlist.all, :id, :title) %>
 
     <%= f.submit "Create and Add Song to Playlist!!" %> 
