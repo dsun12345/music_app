@@ -1,7 +1,7 @@
 The Playlist is <%= @playlist.title %>
 
 <%= @songs.each do |song| %>
-    <h1><%= song.id %>. <%= song.title %></h1>
+    <h1><%= song.id %>. <%= link_to song.title, song_path(song.id)%></h1>
 <% end %>
 
 <%= button_to "delete", @playlist, method: :delete %>

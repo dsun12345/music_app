@@ -2,8 +2,6 @@ class SongsController < ApplicationController
     
     def index
         @songs = Song.all
-        # @songs = Song.all.where(playlist_id: params[:playlist_id])
-        byebug
     end 
 
     def new
@@ -12,9 +10,10 @@ class SongsController < ApplicationController
     end 
 
     def create
+        @playlist = Playlist.find_by(id: song_params[:playlist_id])
         @song = Song.new(song_params)
         if @song.save
-            redirect_to songs_path
+            redirect_to playlist_path(@playlist)
         else 
             render :new
         end 
