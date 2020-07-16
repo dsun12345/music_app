@@ -1,5 +1,9 @@
 The Playlist is <%= @playlist.title %>
 
+<%= @songs.each do |song| %>
+    <h1><%= song.id %>. <%= song.title %></h1>
+<% end %>
+
 <%= button_to "delete", @playlist, method: :delete %>
 
-<%= link_to "add a song", new_playlist_song_path(@playlist) %>
+<%= link_to "add a song", new_song_path(@playlist) %>

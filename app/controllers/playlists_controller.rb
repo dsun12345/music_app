@@ -12,7 +12,7 @@ class PlaylistsController < ApplicationController
     def create
         @playlist = Playlist.new(playlist_params)
         if @playlist.save
-            redirect_to playlist_path(@playlist)
+            redirect_to playlists_path
         else 
             render :new
         end 
@@ -21,11 +21,12 @@ class PlaylistsController < ApplicationController
 
     def show 
         @playlist = Playlist.find_by(id: params[:id])
-        # if @song
-        #     render :show
-        # else 
-        #     redirect_to songs_path
-        # end 
+        @songs = Song.all.where(playlist_id: params[:id])
+        if @playlist
+            render :show
+        else 
+            redirect_to playlists_path
+        end 
     end 
 
     def edit
@@ -62,7 +63,7 @@ class PlaylistsController < ApplicationController
     private 
     
     def playlist_params
-        params.require(:song).permit(
+        params.require(:playlist).permit(
             :title
         )
     end 

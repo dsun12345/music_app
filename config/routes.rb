@@ -20,9 +20,9 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   
-  resources :playlists do 
-    resources :songs  
-  end 
+  resources :playlists 
+  resources :songs  
+  
 
 
 end
