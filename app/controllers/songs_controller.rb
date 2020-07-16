@@ -53,9 +53,9 @@ class SongsController < ApplicationController
         @song = Song.find_by(id: params[:id])
         if @song 
             @song.destroy
-            redirect_to songs_path
+            redirect_to playlists_path
         else
-            redirect_to songs_path
+            redirect_to playlists_path
         end 
     end 
 
